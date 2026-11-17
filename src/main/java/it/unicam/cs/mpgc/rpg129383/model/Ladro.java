@@ -3,6 +3,9 @@ package it.unicam.cs.mpgc.rpg129383.model;
 import it.unicam.cs.mpgc.rpg129383.enums.TipoEroe;
 import it.unicam.cs.mpgc.rpg129383.utils.Dado;
 
+/**
+ * Molto veloce può infliggere colpi critici
+ */
 public class Ladro extends Eroe{
     private final static int PROBABILITA_CRITICO = 30;
     private final static int MOLTIPLICATORE_CRITICO = 2;

@@ -1,6 +1,9 @@
 package it.unicam.cs.mpgc.rpg129383.model;
 
 import it.unicam.cs.mpgc.rpg129383.enums.TipoEroe;
+/**
+ * Poca vita ma grande danno
+ */
 
 public class Mago extends Eroe{
 
