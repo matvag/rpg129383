@@ -72,4 +72,10 @@ public abstract class Eroe extends Personaggio{
     public int getOro() {
         return oro;
     }
+
+    @Override
+    public String toString() {
+        return getNome() + " il " + getTipo().getNome() + " (Lv " + livello + ", "
+                + getPuntiVita() + "/" + getPuntiVitaMax() + " PV)";
+    }
 }
