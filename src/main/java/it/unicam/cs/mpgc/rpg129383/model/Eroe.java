@@ -61,6 +61,8 @@ public abstract class Eroe extends Personaggio{
         oro =- quantita;
     }
 
+
+
     public int getLivello() {
         return livello;
     }
