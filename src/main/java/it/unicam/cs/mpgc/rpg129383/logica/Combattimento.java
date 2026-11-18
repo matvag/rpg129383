@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg129383.logica;
 
 import it.unicam.cs.mpgc.rpg129383.enums.StatoCombattimento;
+import it.unicam.cs.mpgc.rpg129383.interfaces.Oggetto;
 import it.unicam.cs.mpgc.rpg129383.utils.Dado;
 import it.unicam.cs.mpgc.rpg129383.model.Eroe;
 import it.unicam.cs.mpgc.rpg129383.model.Nemico;
@@ -43,6 +44,17 @@ public class Combattimento {
         }else{
             vittoria();
         }
+    }
+
+
+    public void usaOggetto(Oggetto oggetto){
+        verificaInCorso();
+        if(!eroe.usaOggetto(oggetto)){
+            registra("Non possiedi " + oggetto.getNome());
+            return;
+        }
+        registra(eroe.getNome() + " usa " + oggetto.getNome());
+        turnoNemico();
     }
 
 
