@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg129383.model;
 
 import it.unicam.cs.mpgc.rpg129383.enums.TipoEroe;
+import it.unicam.cs.mpgc.rpg129383.interfaces.Oggetto;
 
 public abstract class Eroe extends Personaggio{
     private static final int ESPERIENZA_PER_LIVELLO = 100;
@@ -63,6 +64,14 @@ public abstract class Eroe extends Personaggio{
             throw new IllegalArgumentException("Quantità di oro non valida");
         }
         oro =- quantita;
+    }
+
+    public boolean usaOggetto(Oggetto oggetto) {
+        if (!inventario.rimuoviOggetto(oggetto)) {
+            return false;
+        }
+        oggetto.usa(this);
+        return true;
     }
 
     public void equipaggia(Arma arma){
