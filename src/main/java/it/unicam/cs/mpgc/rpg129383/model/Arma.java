@@ -14,6 +14,7 @@ public class Arma extends OggettoBase{
 
     @Override
     public void usa(Eroe eroe){
+        eroe.equipaggia(this);
     }
 
     @Override
