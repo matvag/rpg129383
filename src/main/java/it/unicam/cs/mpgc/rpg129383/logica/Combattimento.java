@@ -105,5 +105,23 @@ public class Combattimento {
         registro.add(messaggio);
     }
 
+    public Eroe getEroe() {
+        return eroe;
+    }
 
+    public Nemico getNemico() {
+        return nemico;
+    }
+
+    public Dado getDado() {
+        return dado;
+    }
+
+    public List<String> getRegistro() {
+        return Collections.unmodifiableList(registro);
+    }
+
+    public StatoCombattimento getStato() {
+        return stato;
+    }
 }
