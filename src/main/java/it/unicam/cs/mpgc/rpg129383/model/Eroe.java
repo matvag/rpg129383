@@ -8,12 +8,16 @@ public abstract class Eroe extends Personaggio{
     private int livello;
     private int esperienza;
     private int oro;
+    private final Inventario inventario;
+    private Arma armaEquipaggiata;
 
     public Eroe(String nome, int puntiVitaMax, int attacco, int difesa) {
         super(nome, puntiVitaMax, attacco, difesa);
         this.livello = 1;
         this.esperienza = 0;
         this.oro = 0;
+        this.inventario = new Inventario();
+        this.armaEquipaggiata = null;
     }
 
     public abstract TipoEroe getTipo();
@@ -61,7 +65,28 @@ public abstract class Eroe extends Personaggio{
         oro =- quantita;
     }
 
+    public void equipaggia(Arma arma){
+        if(armaEquipaggiata == null){
+            inventario.aggiungiOggetto(armaEquipaggiata);
+        }
+        armaEquipaggiata = arma;
+    }
 
+    @Override
+    public int getAttacco() {
+        if (armaEquipaggiata == null) {
+            return super.getAttacco();
+        }
+        return super.getAttacco() + armaEquipaggiata.getBonusAttacco();
+    }
+
+    public Inventario getInventario() {
+        return inventario;
+    }
+
+    public Arma getArmaEquipaggiata() {
+        return armaEquipaggiata;
+    }
 
     public int getLivello() {
         return livello;
