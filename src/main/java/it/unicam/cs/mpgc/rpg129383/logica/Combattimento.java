@@ -18,6 +18,7 @@ import java.util.List;
  */
 public class Combattimento {
 
+    private static final int PROBABILITA_DI_FUGA = 50;
 
     private final Eroe eroe;
     private final Nemico nemico;
@@ -55,6 +56,37 @@ public class Combattimento {
         }
         registra(eroe.getNome() + " usa " + oggetto.getNome());
         turnoNemico();
+    }
+
+    public void fuggi(){
+        verificaInCorso();
+        if(dado.probabilita(PROBABILITA_DI_FUGA)){
+            stato = StatoCombattimento.FUGA;
+            registra(eroe.getNome() + " riesce a fuggire!");
+        }else{
+            registra(eroe.getNome() + " non riesce a fuggire!");
+            turnoNemico();
+        }
+    }
+
+    private void turnoNemico(){
+        int danno = nemico.attacca(eroe);
+        registra(eroe.getNome() + " attacca e infligge " + danno + " danni");
+        if(!eroe.isVivo()){
+           stato = StatoCombattimento.SCONFITTA;
+           registra(eroe.getNome() + " è stato sconfitto ");
+        }
+    }
+
+    private void vittoria(){
+        stato = StatoCombattimento.VITTORIA;
+        registra(eroe.getNome() + " vittoria");
+        eroe.aggiungiOro(nemico.getOroRicompensa());
+        int livelli = eroe.guadagnaEsperienza(nemico.getEsperienzaRicompensa());
+        registra("Ottieni " + nemico.getEsperienzaRicompensa() + " esperienza e " + nemico.getOroRicompensa() + " oro");
+        if(livelli > 0){
+            registra(eroe.getNome() + " sale al livello " + eroe.getLivello());
+        }
     }
 
 
