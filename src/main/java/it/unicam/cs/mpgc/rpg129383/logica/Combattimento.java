@@ -30,7 +30,35 @@ public class Combattimento {
         this.dado = dado;
         this.registro = new ArrayList<>();
         this.stato = StatoCombattimento.IN_CORSO;
+        registra(nemico.getNome() + " ti sbarra la strada...");
 
+    }
+
+    public void attacca(){
+        verificaInCorso();
+        int danno = eroe.attacca(nemico);
+        registra(eroe.getNome() + " colpisce " + nemico.getNome() + " e infligge " + danno + " danni");
+        if(nemico.isVivo()){
+            turnoNemico();
+        }else{
+            vittoria();
+        }
+    }
+
+
+    private void verificaInCorso(){
+        if(isTerminato()){
+            throw new IllegalArgumentException("Il combattimento è già terminato");
+        }
+    }
+
+    private boolean isTerminato(){
+        return stato != StatoCombattimento.IN_CORSO;
+    }
+
+
+    private void registra(String messaggio){
+        registro.add(messaggio);
     }
 
 
