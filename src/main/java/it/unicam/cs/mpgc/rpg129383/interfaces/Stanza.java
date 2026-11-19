@@ -17,7 +17,7 @@ public interface Stanza {
     String entra(Eroe eroe);
 
     /**
-     *
+     * Optional : in tutte le stanze non c'è un nemico es. stanza riposo
      */
 
     default Optional<Nemico> getNemico() {
