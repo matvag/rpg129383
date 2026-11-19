@@ -7,6 +7,11 @@ import it.unicam.cs.mpgc.rpg129383.interfaces.Oggetto;
 import it.unicam.cs.mpgc.rpg129383.interfaces.Stanza;
 import it.unicam.cs.mpgc.rpg129383.model.Eroe;
 
+/**
+ *  Stanza in cui si trova oro e oggetti.
+ *  Gestice l'inventario pieno di oggetti lasciando l'oggetto trovato
+*/
+
 public class StanzaTesoro implements Stanza {
     public final Oggetto oggetto;
     public final int oro;
@@ -18,7 +23,7 @@ public class StanzaTesoro implements Stanza {
 
     @Override
     public TipoStanza getTipo() {
-        return TipoStanza.RIPOSO;
+        return TipoStanza.TESORO;
     }
 
     @Override
