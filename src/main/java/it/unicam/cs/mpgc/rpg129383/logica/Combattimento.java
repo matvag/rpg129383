@@ -96,7 +96,7 @@ public class Combattimento {
         }
     }
 
-    private boolean isTerminato(){
+    public boolean isTerminato(){
         return stato != StatoCombattimento.IN_CORSO;
     }
 

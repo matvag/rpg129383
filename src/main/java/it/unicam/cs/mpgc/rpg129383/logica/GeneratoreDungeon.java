@@ -15,7 +15,9 @@ import it.unicam.cs.mpgc.rpg129383.utils.Dado;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * Crea in modo casuale le stanze del dungeon. L'ultima stanza è sempre quella del boss
+ */
 public class GeneratoreDungeon {
     private static final TipoNemico BOSS = TipoNemico.DRAGO;
     private static final int PROBABILITA_COMBATTIMENTO = 60;
@@ -45,7 +47,7 @@ public class GeneratoreDungeon {
             throw new IllegalArgumentException("Numero stanze non valido almeno una stanza");
         }
         List<Stanza> stanze = new ArrayList<>();
-        for(int i = 0; i < numeroStanze; i++){
+        for(int i = 0; i < numeroStanze - 1; i++){
             stanze.add(creaStanzaCasuale());
         }
         stanze.add(new StanzaBoss(new Nemico(BOSS)));
