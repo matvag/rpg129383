@@ -112,7 +112,6 @@ public class Combattimento {
     public Nemico getNemico() {
         return nemico;
     }
-
     public Dado getDado() {
         return dado;
     }
