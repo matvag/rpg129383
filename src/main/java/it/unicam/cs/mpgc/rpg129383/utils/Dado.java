@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.rpg129383.utils;
 import java.util.Random;
 
 /**
- * Genera numeri casuali per il gioco (colpi critici, generazione dei nemici...).
+ * Genera numeri casuali per il gioco (colpi critici, generazione dei nemici...)
  */
 public class Dado {
 
