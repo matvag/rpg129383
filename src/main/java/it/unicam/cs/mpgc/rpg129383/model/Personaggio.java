@@ -60,6 +60,12 @@ public abstract class Personaggio implements Combattente {
         attacco += attaccoExtra;
         difesa += difesaExtra;
     }
+    /**
+     * Imposta i punti vita tra 0 e il massimo, ad esempio quando si carica un salvataggio
+     */
+    protected void impostaPuntiVita(int puntiVita) {
+        this.puntiVita = Math.max(0, Math.min(puntiVita, puntiVitaMax));
+    }
 
     @Override
     public String getNome() {

@@ -88,6 +88,25 @@ public abstract class Eroe extends Personaggio{
         }
         return super.getAttacco() + armaEquipaggiata.getBonusAttacco();
     }
+    /**
+     * Riporta un eroe appena creato ai progressi salvati.
+     * Metodo per persistenza progressi eroe.
+     */
+    public void ripristinaProgressi(int livello, int esperienza, int oro, int puntiVita) {
+        if (this.livello != 1 || this.esperienza != 0) {
+            throw new IllegalStateException("Si possono ripristinare i progressi solo di un eroe nuovo");
+        }
+        if (livello < 1 || esperienza < 0 || oro < 0) {
+            throw new IllegalArgumentException("Progressi non validi");
+        }
+        while (this.livello < livello) {
+            this.livello++;
+            potenziaPerLivello();
+        }
+        this.esperienza = esperienza;
+        this.oro = oro;
+        impostaPuntiVita(puntiVita);
+    }
 
     public Inventario getInventario() {
         return inventario;
