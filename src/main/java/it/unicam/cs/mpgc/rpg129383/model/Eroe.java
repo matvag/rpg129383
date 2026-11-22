@@ -46,7 +46,7 @@ public abstract class Eroe extends Personaggio{
         return livello * ESPERIENZA_PER_LIVELLO;
     }
 
-    public void saliDiLivello(){
+    private void saliDiLivello(){
         livello++;
         potenziaPerLivello();
         cura(getPuntiVitaMax());
@@ -58,12 +58,14 @@ public abstract class Eroe extends Personaggio{
         }
         oro += quantita;
     }
-
+/**
+ * Questo metodo non è stato mai implementato
+ */
     public void spendiOro(int quantita){
         if(quantita < 0 || quantita > oro){
             throw new IllegalArgumentException("Quantità di oro non valida");
         }
-        oro =- quantita;
+        oro -= quantita;
     }
 
     public boolean usaOggetto(Oggetto oggetto) {
@@ -75,7 +77,7 @@ public abstract class Eroe extends Personaggio{
     }
 
     public void equipaggia(Arma arma){
-        if(armaEquipaggiata == null){
+        if(armaEquipaggiata != null){
             inventario.aggiungiOggetto(armaEquipaggiata);
         }
         armaEquipaggiata = arma;
