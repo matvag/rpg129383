@@ -1,0 +1,59 @@
+.root {
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 14px;
+}
+
+.schermata {
+    -fx-background-color: #1e1b18;
+    -fx-padding: 24;
+}
+
+.label, .radio-button {
+    -fx-text-fill: #e8dcc4;
+}
+
+.titolo {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #d9a441;
+}
+
+.nome {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.stanza {
+    -fx-font-size: 18px;
+    -fx-text-fill: #d9a441;
+}
+
+.button {
+    -fx-background-color: #6b3e26;
+    -fx-text-fill: #f5ead6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #8a5232;
+}
+
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #4caf50;
+}
+
+.vita-nemico > .bar {
+    -fx-background-color: #c0392b;
+}
+
+.text-area, .text-area .content, .list-view, .text-field {
+    -fx-control-inner-background: #2b2622;
+    -fx-text-fill: #e8dcc4;
+    -fx-background-color: #2b2622;
+}
