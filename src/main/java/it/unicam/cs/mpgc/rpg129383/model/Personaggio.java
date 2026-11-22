@@ -20,10 +20,11 @@ public abstract class Personaggio implements Combattente {
         }
         this.nome = nome;
         this.puntiVitaMax = puntiVitaMax;
+        this.puntiVita = puntiVitaMax;
         this.attacco = attacco;
         this.difesa = difesa;
     }
-    /*
+    /**
      * Ogni tipo di personaggio calcola il danno a modo suo
      */
     protected abstract int calcolaDanno();
