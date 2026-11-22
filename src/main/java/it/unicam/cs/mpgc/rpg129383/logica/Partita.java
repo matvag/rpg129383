@@ -6,7 +6,6 @@ import it.unicam.cs.mpgc.rpg129383.model.Eroe;
 import it.unicam.cs.mpgc.rpg129383.model.Nemico;
 import it.unicam.cs.mpgc.rpg129383.utils.Dado;
 
-import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +23,7 @@ public class Partita {
 
     public Partita(Eroe eroe, List<Stanza> stanze, Dado dado) {
         if (stanze.isEmpty()) {
-            throw new IllegalArgumentException("Il dungeon deve avere almeno una stanza");
+            throw new IllegalStateException("Il dungeon deve avere almeno una stanza");
         }
         this.eroe = eroe;
         this.stanze = new ArrayList<>(stanze);
