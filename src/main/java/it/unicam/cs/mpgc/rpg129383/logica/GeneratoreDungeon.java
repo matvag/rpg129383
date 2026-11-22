@@ -61,7 +61,7 @@ public class GeneratoreDungeon {
     private Stanza creaStanzaCasuale() {
         int tiro = dado.tira(1,100);
         if (tiro <= PROBABILITA_COMBATTIMENTO) {
-            creaStanzaCombattimento();
+            return creaStanzaCombattimento();
         }
         if (tiro <= PROBABILITA_COMBATTIMENTO + PROBABILITA_TESORO) {
             int oro = dado.tira(MINIMO_ORO, MASSIMO_ORO);
