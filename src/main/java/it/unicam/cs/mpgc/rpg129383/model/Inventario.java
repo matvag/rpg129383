@@ -30,6 +30,10 @@ public class Inventario {
     }
 
     public boolean aggiungiOggetto(Oggetto oggetto){
+        if (oggetto == null) {
+            throw new IllegalArgumentException("Non si può aggiungere un oggetto nullo");
+        }
+
         if (isPieno()) {
            return false;
         }
