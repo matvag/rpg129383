@@ -49,7 +49,7 @@ public abstract class OggettoBase implements Oggetto {
 
     @Override
     public String toString() {
-        return nome;
+        return getNome() + " (" + getDescrizione() + ")";
     }
 
 
