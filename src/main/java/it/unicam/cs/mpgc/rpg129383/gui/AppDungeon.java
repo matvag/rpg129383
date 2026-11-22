@@ -74,4 +74,5 @@ public class AppDungeon extends Application implements Navigatore {
     private void mostra(Parent schermata) {
         scena.setRoot(schermata);
     }
+
 }

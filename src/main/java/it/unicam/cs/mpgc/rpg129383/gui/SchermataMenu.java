@@ -18,7 +18,7 @@ public class SchermataMenu extends VBox{
         titolo.getStyleClass().add("titolo");
         Label sottotitolo = new Label("Attraversa il dungeon e uccidi il BOSS FINALE");
 
-        Button nuovaPartita = new Button("Nuovo Partita");
+        Button nuovaPartita = new Button("Nuova Partita");
         nuovaPartita.setOnAction(evento -> navigatore.mostraCreazioneEroe());
 
         Button caricaPartita = new Button("Carica Partita");
