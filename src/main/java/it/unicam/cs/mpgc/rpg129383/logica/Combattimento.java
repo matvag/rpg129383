@@ -71,7 +71,7 @@ public class Combattimento {
 
     private void turnoNemico(){
         int danno = nemico.attacca(eroe);
-        registra(eroe.getNome() + " attacca e infligge " + danno + " danni");
+        registra(nemico.getNome() + " attacca e infligge " + danno + " danni");
         if(!eroe.isVivo()){
            stato = StatoCombattimento.SCONFITTA;
            registra(eroe.getNome() + " è stato sconfitto ");
@@ -80,7 +80,7 @@ public class Combattimento {
 
     private void vittoria(){
         stato = StatoCombattimento.VITTORIA;
-        registra(eroe.getNome() + " vittoria");
+        registra(eroe.getNome() + " hai vinto!");
         eroe.aggiungiOro(nemico.getOroRicompensa());
         int livelli = eroe.guadagnaEsperienza(nemico.getEsperienzaRicompensa());
         registra("Ottieni " + nemico.getEsperienzaRicompensa() + " esperienza e " + nemico.getOroRicompensa() + " oro");
