@@ -47,8 +47,12 @@ public class GeneratoreDungeon {
             throw new IllegalArgumentException("Numero stanze non valido almeno una stanza");
         }
         List<Stanza> stanze = new ArrayList<>();
-        for(int i = 0; i < numeroStanze - 1; i++){
-            stanze.add(creaStanzaCasuale());
+        for (int i = 0; i < numeroStanze - 1; i++) {
+            if (i == 0) {
+                stanze.add(creaStanzaCombattimento());
+            } else {
+                stanze.add(creaStanzaCasuale());
+            }
         }
         stanze.add(new StanzaBoss(new Nemico(BOSS)));
         return stanze;
@@ -57,13 +61,17 @@ public class GeneratoreDungeon {
     private Stanza creaStanzaCasuale() {
         int tiro = dado.tira(1,100);
         if (tiro <= PROBABILITA_COMBATTIMENTO) {
-            return new StanzaCombattimento(new Nemico(scegliCasuale(nemiciComuni)));
+            return creaStanzaCombattimento();
         }
         if (tiro <= PROBABILITA_COMBATTIMENTO + PROBABILITA_TESORO) {
             int oro = dado.tira(MINIMO_ORO, MASSIMO_ORO);
             return new StanzaTesoro(scegliCasuale(TESORI), oro);
         }
         return new StanzaRiposo();
+    }
+
+    private Stanza creaStanzaCombattimento(){
+        return new StanzaCombattimento(new Nemico(scegliCasuale(nemiciComuni)));
     }
 
     private <T> T scegliCasuale(List<T> elementi) {

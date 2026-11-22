@@ -10,10 +10,13 @@ import it.unicam.cs.mpgc.rpg129383.model.Eroe;
 import it.unicam.cs.mpgc.rpg129383.model.Pozione;
 import it.unicam.cs.mpgc.rpg129383.persistenza.SalvataggioJson;
 import it.unicam.cs.mpgc.rpg129383.utils.Dado;
+import it.unicam.cs.mpgc.rpg129383.interfaces.Stanza;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 /**
  *  apre la finestra e gestisce il passaggio tra le schermate
